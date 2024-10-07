@@ -1,0 +1,12 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    margin-bottom: 16px;
+    border-bottom: 1px  #021d16;
+    border: 2px solid #ffffff79;
+    border-radius: 8px;
+    backdrop-filter: blur(3px);
+  }
+  

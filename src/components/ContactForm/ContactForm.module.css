@@ -1,0 +1,56 @@
+.form {
+    display: block;
+    align-items: center;
+    margin-bottom: 20px;
+    max-width: 400px;
+    padding: 15px 15px;
+    backdrop-filter: blur(8px);
+    /*background-color: rgb(241, 246, 230) ;*/
+    border: 2px solid  rgb(165, 248, 120);
+    border-radius: 4px;
+  }
+
+  .inputForm {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  
+    
+  }
+
+  .inputLabel {
+    color: rgb(12, 110, 3);
+    font-weight: bold;
+
+    font-size: 20px;
+  }
+
+  .inputName {
+    max-width: 350px;
+    padding: 10px 5px;
+    color: rgb(0, 139, 21);
+    border: 2px solid  rgb(165, 248, 120);
+    border-radius: 4px;
+    outline: transparent;
+  }
+  
+  .inputMessage {
+    color: rgb(16, 139, 0);
+  }
+
+  .buttonForm {
+   
+    min-width: 150px;
+    padding: 10px 0;
+    align-items: center;
+    background: rgb(74, 139, 0);
+    color: rgb(216,191,216);
+    border: none;
+    border-radius: 4px;
+}
+
+.buttonForm:hover,
+.buttonForm:focus{
+    background-color: rgb(114, 204, 50);
+    outline: transparent;
+}

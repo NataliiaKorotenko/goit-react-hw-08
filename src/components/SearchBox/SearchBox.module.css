@@ -1,0 +1,26 @@
+.searchForm
+ {  display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    max-width: 400px;
+    padding: 20px 15px;
+    backdrop-filter: blur(3px);
+    /*background-color: rgb(241, 246, 230) ;*/
+    border: 2px solid  rgb(165, 248, 120);
+    border-radius: 4px;
+    font-size: 18px;
+  }
+
+.searchLabel {
+    margin-bottom: 6px;
+    color: rgb(162, 224, 29);
+}
+.searchInput{
+  max-width: 400px;
+  padding: 10px 5px;
+  color: rgb(0, 139, 21);
+  border: 2px solid  rgb(165, 248, 120);
+  border-radius: 4px;
+  margin-right: 10px;
+  outline: transparent;
+}

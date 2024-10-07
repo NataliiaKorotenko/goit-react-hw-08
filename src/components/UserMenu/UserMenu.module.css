@@ -1,0 +1,39 @@
+.userMenu {
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+        width: 100%;
+        margin: 0 10px;
+      }
+      
+      .userText {
+        display: flex;
+        
+        align-items: center;
+        gap: 20px;
+        color: rgb(18, 94, 20);
+        font-size: 24px;
+      }
+      
+      /*.span {
+        font-size: 24px;
+        font-weight: 800;
+        color: blue;
+      }*/
+      
+      .button {
+        border: none;
+        border-radius: 8px;
+        padding: 10px 12px;
+        transition: all 250ms linear;
+        font-weight: 700;
+        font-size: 22px;
+        color: rgb(9, 89, 12);
+        background: rgb(191, 249, 192);
+      }
+      
+      .button:hover,
+      .button:focus {
+        color: rgb(0, 255, 34);
+        background-color: rgb(3, 85, 4);
+      }

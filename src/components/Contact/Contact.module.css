@@ -1,0 +1,46 @@
+.contactItem {
+    min-width: 270px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid  rgb(75,0,130);
+    border-radius: 4px;
+  }
+
+.contacWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+  }
+
+.contactUser{
+    display: flex;
+    align-items: center;
+  }
+
+.icon {
+    margin-right: 5px;
+    color: rgb(139,0,139);
+  }
+
+.contactName{
+
+color: rgb(139,0,139)
+}
+
+.contactNumber{
+    color: rgb(75,0,130)
+}
+
+.deleteButton{
+    background: rgb(139,0,139);
+    color: rgb(216,191,216);
+}
+
+.deleteButton:hover,
+.deleteButton:focus{
+  background-color: rgb(153,50,204);
+  outline: transparent;
+}

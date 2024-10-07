@@ -1,0 +1,8 @@
+.contForm {
+    .container {
+        display: flex;
+        flex-direction: column; /* Элементы располагаются вертикально */
+        align-items: center; /* Выровнять элементы по центру горизонтально */
+      }
+      
+}
