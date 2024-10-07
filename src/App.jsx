@@ -5,7 +5,7 @@ import { refreshUser } from './redux/auth/operations';
 
 import Layout from "./components/Layout/Layout";
 import RestrictedRoute from './components/RestrictedRoute';
-import PrivateRoute from './components/RestrictedRoute';
+import PrivateRoute from './components/PrivateRoute';
 
 import './App.css'
 

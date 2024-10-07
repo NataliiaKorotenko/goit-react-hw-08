@@ -42,7 +42,7 @@ export default function RegistrationForm () {
               <Form className={css.form}>
         <label className={css.label}>
           <span>Enter your name</span>
-          <Field type="text" name="name" placeholder="Simon" />
+          <Field type="text" name="name" placeholder="Nataliia" />
           <ErrorMessage
             className={css.errorText}
             name="name"
@@ -54,7 +54,7 @@ export default function RegistrationForm () {
           <Field
             type="text"
             name="email"
-            placeholder="test.example@gmail.com"
+            placeholder="testexample@gmail.com"
           />
           <ErrorMessage
             className={css.errorText}

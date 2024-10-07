@@ -3,7 +3,7 @@ import { Field, Form, Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import { logIn } from "../../redux/auth/operations";
-import { selectAuthError } from "../../redux/auth/selectors";
+import { selectAuthIsLoggedIn, selectAuthError } from "../../redux/auth/selectors";
 import css from "./LoginForm.module.css";
 
 const LoginForm = () => {
@@ -13,6 +13,8 @@ const LoginForm = () => {
     email: "",
     password: "",
   };
+
+  const loading = useSelector(selectAuthIsLoggedIn);
 
   const loginFormValidationSchema = Yup.object().shape({
     email: Yup.string().email("Invalid email").required("Email is required!"),
@@ -24,11 +26,13 @@ const LoginForm = () => {
   
   const handleFormSubmit = (value) => {
     dispatch(logIn(value)).then(() => {
-      alert("Login successful!"); // Додати повідомлення при успішному вході
+      alert("Login successful!"); 
     });
   };
 
   return (
+    <>
+    {loading && !error && <Loader />}
     <Formik
       initialValues={initialValues}
       onSubmit={handleFormSubmit}
@@ -40,7 +44,7 @@ const LoginForm = () => {
           <Field
             type="text"
             name="email"
-            placeholder="test.example@gmail.com"
+            placeholder="testexample@gmail.com"
           />
           <ErrorMessage
             className={css.errorText}
@@ -71,6 +75,7 @@ const LoginForm = () => {
         )}
       </Form>
     </Formik>
+    </>
   );
 };
 
