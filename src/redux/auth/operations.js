@@ -39,7 +39,7 @@ export const logIn = createAsyncThunk(
   async (credentials, thunkApi) => {
     try {
       const { data } = await instance.post("/users/login", credentials);
-      setAuthHeader(data.token);  // Встановлюємо токен після входу
+      setAuthHeader(data.token);
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.response?.data?.message || error.message);

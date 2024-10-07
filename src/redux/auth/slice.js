@@ -1,37 +1,39 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { register, logIn, logOut, refreshUser } from './operations';
 
+import toast from 'react-hot-toast';
+
 const initialState = {
   user: { name: null, email: null },
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
-  isLoading: false,  // Флаг загрузки
   error: null, 
 };
 
 const authSlice = createSlice({
   name: 'auth',
   initialState,
+
   extraReducers: (builder) => {
     builder
-      .addCase(register.pending, (state) => {
-        state.isLoading = true;
-      })
-      .addCase(register.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.user = action.payload.user;
-        state.token = action.payload.token;
-        state.isLoggedIn = true;
-        state.error = null;  
-      })
-      .addCase(register.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.error.message || 'Unknown error'; 
-      })
+    .addCase(register.pending, (state) => {
+      state.error = null;
+      state.isLoading = true;
+    })
+    .addCase(register.fulfilled, (state, { payload }) => {
+      state.isLoading = false;
+      state.token = payload.token;
+      state.user = payload.user;
+    })
+    .addCase(register.rejected, (state, { payload }) => {
+      state.error = payload;
+      state.isLoading = false;
+    })
 
       .addCase(logIn.pending, (state) => {
-        state.isLoading = true;
+        state.error = null;
+
       })
       .addCase(logIn.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -53,17 +55,17 @@ const authSlice = createSlice({
       })
 
       .addCase(refreshUser.pending, (state) => {
+        state.error = null;
         state.isRefreshing = true;
       })
       .addCase(refreshUser.fulfilled, (state, action) => {
-        state.isRefreshing = false;
-        state.user = action.payload;
         state.isLoggedIn = true;
-        state.error = null; 
+        state.user = action.payload;
+        state.isRefreshing = false;
       })
       .addCase(refreshUser.rejected, (state, action) => {
+        state.error = action.payload;
         state.isRefreshing = false;
-        state.error = action.error.message || 'Unknown error'; 
       });
   },
 });

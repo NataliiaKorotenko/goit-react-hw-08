@@ -2,7 +2,7 @@ import { Vortex } from "react-loader-spinner";
 
 const Loader = () => {
   return (
-    <div style={{ textAlign: "center" }}>
+    <div >
       <Vortex
         visible={true}
         height="80"

@@ -6,27 +6,21 @@ import ContactList from '../../components/ContactList/ContactList';
 import ContactForm from '../../components/ContactForm/ContactForm';
 import SearchBox from '../../components/SearchBox/SearchBox'; 
 import css from "../ContactsPage/ContactsPage.module.css";
-import toast, { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
+import Loader from '../../components/Loader/Loader';
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
-  const { items = [], loading, error } = useSelector(selectContacts);
+  const { items = [], isLoading, error } = useSelector(selectContacts);
 
   useEffect(() => {
-    dispatch(fetchContacts())
-      .unwrap()
-      .then(() => {
-        toast.success("Phonebook loaded successfully!");
-      })
-      .catch((error) => {
-        toast.error(`Failed to load contacts: ${error.message}`);
-      });
+    dispatch(fetchContacts());
   }, [dispatch]);
 
   return (
-    <div className={css.contForm}>
+    <div className={css.contForm}>      
       <>
-        {loading && <p>Loading contacts...</p>}
+      {isLoading && <Loader />}
         {error && <p>Error loading contacts: {error}</p>} 
         <Toaster />
         <ContactForm />

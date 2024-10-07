@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../redux/auth/operations";
 import { selectAuthError } from "../../redux/auth/selectors";
+import Loader from "../Loader/Loader";
 import css from "./RegistrationForm.module.css";
 
 export default function RegistrationForm () {
